@@ -156,3 +156,42 @@ img {
     background: #3b82f6;
      color: #fff;
 }
+
+
+/* Hamburger (hidden on desktop) */
+.nav__toggle {
+  display: none;
+}
+
+
+
+
+
+/*=============== BREAKPOINTS ===============*/
+
+/* for hamburger menu */
+@media screen and (max-width: 768px) {
+
+    .container {
+   max-width: 1200px; 
+   padding: 20px 20px;
+}
+
+    .nav__links{
+        display: none;
+    }
+    .contact__us {
+        display: none;
+
+    }
+
+    .nav__toggle {
+        display: flex;
+        cursor: pointer;
+    }
+}
+
+
+
+
+
