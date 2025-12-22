@@ -1,8 +1,7 @@
 /*=============== GOOGLE FONTS ===============*/
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap");
 
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -31,8 +30,8 @@
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
 
   /*========== Font weight ==========*/
   --font-regular: 400;
@@ -54,7 +53,7 @@
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
     --normal-font-size: 1rem;
-    --small-font-size: .875rem;
+    --small-font-size: 0.875rem;
   }
 }
 
@@ -74,10 +73,13 @@ body {
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
-  transition: background-color .4s;
+  transition: background-color 0.4s;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
 }
@@ -96,102 +98,105 @@ img {
   height: auto;
 }
 
-
-
-
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
-   max-width: 1200px; 
-   padding: 20px 80px;
+  max-width: 1200px;
+  padding: 20px 80px;
 }
 
-
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 1200px;
+    padding: 20px 20px;
+  }
+}
 
 /*=============== HEADER & NAV ===============*/
 .header {
-    position: fixed;
-    z-index: 100;
-    width: 100%;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
 }
 .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav__links {
-    display: flex;
-    gap: 2rem;
+  display: flex;
+  gap: 2rem;
 }
 
 .nav__links a {
-     font-family:  var(--body-font-two);
-     font-weight:  var(--font-regular);
-     font-size: 18px;
-     color: #6b7280;
-    transition: color 0.2s ease;
+  font-family: var(--body-font-two);
+  font-weight: var(--font-regular);
+  font-size: 16px;
+  color: #6b7280;
+  transition: color 0.2s ease;
 }
-
 
 .nav__links a:hover,
 .nav__links a.active {
   color: #111;
 }
 
-
-
 .contact__us {
-    border: 1px solid #3b82f6;
-    padding: 8px 30px;
-     border-radius: 999px;
-     color: #3b82f6;
-     font-family:  var(--body-font-two);
-     font-weight:  var(--font-bold);
-     font-size: 14px;
+  border: 1px solid #3b82f6;
+  padding: 8px 30px;
+  border-radius: 999px;
+  color: #3b82f6;
+  font-family: var(--body-font-two);
+  font-weight: var(--font-bold);
+  font-size: 14px;
 }
-
-
 
 .contact__us:hover {
-    background: #3b82f6;
-     color: #fff;
+  background: #3b82f6;
+  color: #fff;
 }
-
 
 /* Hamburger (hidden on desktop) */
 .nav__toggle {
   display: none;
 }
 
-
-
-
-
 /*=============== BREAKPOINTS ===============*/
 
 /* for hamburger menu */
 @media screen and (max-width: 768px) {
+  .nav__links {
+    display: none;
+    z-index: 1000;
 
-    .container {
-   max-width: 1200px; 
-   padding: 20px 20px;
+  }
+  .contact__us {
+    display: none;
+  }
+
+  .nav__toggle {
+    display: flex;
+    cursor: pointer;
+  }
+  .nav {
+    position: relative;
+  }
+
+  .nav__links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    display: none;
+    text-align: center;
+  }
+
+  /* Show menu when active */
+  .nav__links.show-menu {
+    display: flex;
+  }
 }
-
-    .nav__links{
-        display: none;
-    }
-    .contact__us {
-        display: none;
-
-    }
-
-    .nav__toggle {
-        display: flex;
-        cursor: pointer;
-    }
-}
-
-
-
-
-
