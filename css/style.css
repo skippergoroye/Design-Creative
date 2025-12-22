@@ -1,5 +1,8 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap');
+
 
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -21,7 +24,8 @@
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
-  --body-font: "Montserrat", sans-serif;
+  --body-font: "Nunito", sans-serif;
+  --body-font-two: "Quicksand", sans-serif;
   --biggest-font-size: 2.25rem;
   --bigger-font-size: 1.75rem;
   --h1-font-size: 1.5rem;
@@ -34,6 +38,7 @@
   --font-regular: 400;
   --font-medium: 500;
   --font-semi-bold: 600;
+  --font-bold: 700;
 
   /*========== z index ==========*/
   --z-tooltip: 10;
@@ -91,104 +96,63 @@ img {
   height: auto;
 }
 
-/*=============== THEME ===============*/
-/*========== Variables Dark theme ==========*/
 
-
-/*========== 
-	Color changes in some parts of 
-	the website, in dark theme
-==========*/
 
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
-  max-width: 1120px;
-  margin-inline: 1.5rem;
+   max-width: 1200px; 
+   padding: 20px 80px;
 }
 
-.grid {
-  display: grid;
-  gap: 1.5rem;
-}
 
-.section {
-  padding-block: 5rem 1rem;
-}
-
-.section__title {
-  text-align: center;
-  font-size: var(--bigger-font-size);
-  margin-bottom: 1rem;
-}
-
-.section__title span {
-  font-weight: var(--font-regular);
-}
-
-.main {
-  overflow: hidden;
-}
 
 /*=============== HEADER & NAV ===============*/
+.header {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav__links a {
+     font-family:  var(--body-font-two);
+     font-weight:  var(--font-regular);
+     font-size: 18px;
+     color: #6b7280;
+    transition: color 0.2s ease;
+}
 
 
-/* Navigation for mobile devices */
+.nav__links a:hover,
+.nav__links a.active {
+  color: #111;
+}
 
 
-/* Show menu */
+
+.contact__us {
+    border: 1px solid #3b82f6;
+    padding: 8px 30px;
+     border-radius: 999px;
+     color: #3b82f6;
+     font-family:  var(--body-font-two);
+     font-weight:  var(--font-bold);
+     font-size: 14px;
+}
 
 
-/* Add shadow header */
 
-
-/* Active link */
-
-
-/*=============== BUTTON ===============*/
-
-
-/*=============== HOME ===============*/
-
-
-/*=============== DELIVERY ===============*/
-
-
-/*=============== ABOUT ===============*/
-
-
-/*=============== PRICES ===============*/
-
-
-/* Swiper class */
-
-
-/*=============== GALLERY ===============*/
-
-
-/*=============== CONTACT ===============*/
-
-
-/*=============== FOOTER ===============*/
-
-
-/*=============== SCROLL BAR ===============*/
-
-
-/*=============== SCROLL UP ===============*/
-
-
-/* Show Scroll Up */
-
-
-/*=============== BREAKPOINTS ===============*/
-/* For small devices */
-
-
-/* For medium devices */
-
-
-/* For large devices */
-
-
-/* For 2K resolutions (2048 x 1152, 2048 x 1536) */
+.contact__us:hover {
+    background: #3b82f6;
+     color: #fff;
+}
