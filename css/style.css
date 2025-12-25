@@ -25,6 +25,7 @@
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Nunito", sans-serif;
   --body-font-two: "Quicksand", sans-serif;
+
   --biggest-font-size: 2.25rem;
   --bigger-font-size: 1.75rem;
   --h1-font-size: 1.5rem;
@@ -34,27 +35,16 @@
   --small-font-size: 0.813rem;
 
   /*========== Font weight ==========*/
+  --font-regularx: 300;
   --font-regular: 400;
   --font-medium: 500;
   --font-semi-bold: 600;
   --font-bold: 700;
+  --font-extra-bold: 800;
 
   /*========== z index ==========*/
   --z-tooltip: 10;
   --z-fixed: 100;
-}
-
-/*========== Responsive typography ==========*/
-@media screen and (min-width: 1150px) {
-  :root {
-    --biggest-font-size: 3.5rem;
-    --bigger-font-size: 3rem;
-    --h1-font-size: 2.25rem;
-    --h2-font-size: 1.5rem;
-    --h3-font-size: 1.25rem;
-    --normal-font-size: 1rem;
-    --small-font-size: 0.875rem;
-  }
 }
 
 /*=============== BASE ===============*/
@@ -101,7 +91,8 @@ img {
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1200px;
-  padding: 20px 80px;
+  margin: 0 auto;
+  padding-inline: 1.5rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -114,13 +105,22 @@ img {
 /*=============== HEADER & NAV ===============*/
 .header {
   position: fixed;
-  z-index: 100;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 80px; /* 👈 important */
+  z-index: var(--z-fixed);
 }
 .nav {
+  width: 100%;
+  background: white;
+}
+
+.nav__inner {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  height: 80px;
 }
 
 .nav__links {
@@ -161,14 +161,124 @@ img {
   display: none;
 }
 
+/*=============== HERO ===============*/
+.hero {
+  padding-top: 150px; /* header height + spacing */
+  text-align: center;
+}
+
+.hero__content {
+  margin: 0 auto 3rem; /*top | left & right | bottom */
+  max-width: 729px;
+}
+
+.hero h1 {
+  font-weight: var(--font-extra-bold);
+  font-size: 45px;
+  font-family: var(--body-font);
+  color: #1d1d1d;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-weight: 200;
+  font-size: 20px;
+  font-family: var(--body-font);
+  color: #464646;
+}
+
+.hero__image img {
+  width: 100%;
+  max-width: 1200px; /* control max size */
+  margin: 0 auto;
+  display: block;
+}
+
+/*=============== About US ===============*/
+
+.about__sec {
+  margin-top: 30px;
+}
+
+.about__us {
+  text-align: center;
+}
+
+.about__us h2 {
+  color: #377dff;
+  font-size: 24px;
+  font-weight: var(--font-semi-bold);
+  font-family: var(--body-font-two);
+}
+
+.about__us p {
+  color: #1d1d1d;
+  font-size: 55px;
+  margin-top: 8px;
+  font-weight: var(--font-bold);
+  font-family: var(--body-font);
+}
+
+.aboutus__team {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.aboutus__img {
+  flex: 1; /* 50% */
+}
+
+.aboutus_para {
+  flex: 1; /* 50% */
+  /* margin-top: 10px; */
+}
+
+.aboutus_para p {
+  font-size: 18px;
+  font-weight: var(--font-regularx);
+  color: #464646;
+  font-family: var(--body-font-two);
+}
+
+.aboutus_para p:last-of-type {
+  margin-top: 20px;
+}
+
+
+.aboutus__button {
+  display: flex;
+  gap: 5px;
+  margin-top: 15px;
+}
+
+
+.aboutus__button button {
+  border: solid 1px #377DFF;
+  background: white;
+  padding: 8px 25px;
+  border-radius: 30px;
+  color: #377DFF;
+}
+
+
+.aboutus__button button:first-of-type {
+  background: #377DFF;
+  color: #fFF;
+}
+
+.aboutus__button button i {
+   font-size: 18px;
+}
+
 /*=============== BREAKPOINTS ===============*/
 
-/* for hamburger menu */
+/*=============== for hamburger menu ===============*/
 @media screen and (max-width: 768px) {
   .nav__links {
     display: none;
     z-index: 1000;
-
   }
   .contact__us {
     display: none;
@@ -198,5 +308,65 @@ img {
   /* Show menu when active */
   .nav__links.show-menu {
     display: flex;
+  }
+}
+
+/*=============== For HERO ===============*/
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 120px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero__content {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+}
+
+/*=============== About US ===============*/
+@media (max-width: 768px) {
+  .about__sec {
+    margin-top: 1px;
+  }
+
+  .about__us h2 {
+    font-size: 14px;
+  }
+
+  .about__us p {
+    color: #1d1d1d;
+    font-size: 24px;
+    margin-top: 4px;
+  }
+  .aboutus__team {
+    flex-direction: column-reverse;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .aboutus_para p {
+    font-size: 14px;
+  }
+
+  .aboutus__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
