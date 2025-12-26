@@ -95,9 +95,6 @@ img {
   padding-inline: 1.5rem;
 }
 
-
-
-
 @media screen and (max-width: 768px) {
   .container {
     max-width: 1200px;
@@ -249,28 +246,24 @@ img {
   margin-top: 20px;
 }
 
-
 .aboutus__button {
   display: flex;
   gap: 5px;
   margin-top: 15px;
 }
 
-
 .aboutus__button button {
-  border: solid 1px #377DFF;
+  border: solid 1px #377dff;
   background: white;
   padding: 8px 25px;
   border-radius: 30px;
-  color: #377DFF;
+  color: #377dff;
 }
-
 
 .aboutus__button button:first-of-type {
-  background: #377DFF;
-  color: #fFF;
+  background: #377dff;
+  color: #fff;
 }
-
 
 /*=============== Our Service =============== */
 
@@ -284,37 +277,31 @@ img {
   flex: 1;
 }
 
-
 .our__service__secone p {
   color: #377dff;
   font-size: 24px;
   font-weight: var(--font-semi-bold);
   font-family: var(--body-font-two);
-
 }
 
 .our__service__secone h2 {
-    color: #1d1d1d;
+  color: #1d1d1d;
   font-size: 45px;
   margin-top: 8px;
   font-weight: var(--font-bold);
   font-family: var(--body-font);
-
 }
 
 .our__service__secone p:last-of-type {
-   font-size: 18px;
+  font-size: 18px;
   font-weight: var(--font-regularx);
   color: #464646;
   font-family: var(--body-font-two);
-
 }
-
 
 .our__service__sectwo {
   flex: 1;
 }
-
 
 .services {
   display: grid;
@@ -342,8 +329,6 @@ img {
   font-size: 28px;
 }
 
-
-
 .blue {
   background: #3b82f6;
 }
@@ -366,9 +351,6 @@ img {
   color: #111827;
   line-height: 1.4;
 }
-
-
-
 
 /*=============== BREAKPOINTS ===============*/
 
@@ -467,4 +449,26 @@ img {
     justify-content: center;
     align-items: center;
   }
+}
+
+/*=============== Service ===============*/
+
+@media (max-width: 768px) {
+  .our__service {
+    display: flex;
+    flex-direction: column;
+  }
+  .card {
+    padding: 50px 20px;
+  }
+}
+
+
+@media (max-width: 556px) {
+    .services {
+    display: grid;
+    grid-template-columns: repeat(1, 220px);
+    gap: 30px;
+  }
+
 }
