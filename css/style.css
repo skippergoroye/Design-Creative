@@ -95,6 +95,9 @@ img {
   padding-inline: 1.5rem;
 }
 
+
+
+
 @media screen and (max-width: 768px) {
   .container {
     max-width: 1200px;
@@ -204,16 +207,16 @@ img {
   text-align: center;
 }
 
-.about__us h2 {
+.about__us p {
   color: #377dff;
   font-size: 24px;
   font-weight: var(--font-semi-bold);
   font-family: var(--body-font-two);
 }
 
-.about__us p {
+.about__us h2 {
   color: #1d1d1d;
-  font-size: 55px;
+  font-size: 45px;
   margin-top: 8px;
   font-weight: var(--font-bold);
   font-family: var(--body-font);
@@ -268,9 +271,104 @@ img {
   color: #fFF;
 }
 
-/* .aboutus__button button i {
+
+/*=============== Our Service =============== */
+
+.our__service {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 4rem;
+}
+.our__service__secone {
+  flex: 1;
+}
+
+
+.our__service__secone p {
+  color: #377dff;
+  font-size: 24px;
+  font-weight: var(--font-semi-bold);
+  font-family: var(--body-font-two);
+
+}
+
+.our__service__secone h2 {
+    color: #1d1d1d;
+  font-size: 45px;
+  margin-top: 8px;
+  font-weight: var(--font-bold);
+  font-family: var(--body-font);
+
+}
+
+.our__service__secone p:last-of-type {
    font-size: 18px;
-} */
+  font-weight: var(--font-regularx);
+  color: #464646;
+  font-family: var(--body-font-two);
+
+}
+
+
+.our__service__sectwo {
+  flex: 1;
+}
+
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(2, 220px);
+  gap: 30px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 28px;
+}
+
+
+
+.blue {
+  background: #3b82f6;
+}
+
+.red {
+  background: #ef4444;
+}
+
+.green {
+  background: #6ee75a;
+}
+
+.orange {
+  background: #f59e0b;
+}
+
+.card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.4;
+}
+
+
+
 
 /*=============== BREAKPOINTS ===============*/
 
